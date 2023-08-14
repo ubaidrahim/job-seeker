@@ -46,20 +46,13 @@ Follow these steps to get your Laravel application up and running:
     php artisan migrate
     ```
 
-6. **Seed Database (Optional)**:
-
-    If your app uses seeders:
-    ```bash
-    php artisan db:seed
-    ```
-
-7. **Compile Assets**:
+6. **Compile Assets**:
 
     ```bash
     npm run dev
     ```
 
-8. **Start Development Server**:
+7. **Start Development Server**:
 
     ```bash
     php artisan serve
@@ -68,8 +61,6 @@ Follow these steps to get your Laravel application up and running:
     Access your Laravel app at `http://localhost:8000` in your browser.
 
 ## Additional Steps
-
-- **Queue Workers and Jobs**: Run the queue worker using `php artisan queue:work` if needed.
 
 - **Cache and Configuration**: During development, clear and cache config files with `php artisan config:clear` and `php artisan config:cache`.
 
@@ -80,3 +71,36 @@ Follow these steps to get your Laravel application up and running:
 ## Conclusion
 
 Congratulations! Your local Laravel app is now up and running. Explore the extensive Laravel documentation to discover advanced features and customization options. Happy coding!
+
+# Testing Laravel API using POSTMAN
+
+After setting up Laravel application on your local machine, you need to install POSTMAN application to interact with APIs.
+
+## POSTMAN Installation
+
+To install POSTMAN go to [postman.com](https://www.postman.com/downloads/) and install download & install the setup.
+
+## Using job-seeker app through POSTMAN
+
+- Go to `routes/api.php` in the root directory of your project.
+- To fetch GET request routes, you need to select GET request from the dropdown.
+- Now enter complete URL in the following input field. e.g To get list of all jobs you need to access `http://localhost:8000/api/jobs`. (Remeber to add prefix **'api'** in the route).
+
+To send POST request with values:
+
+- Select POST from the dropdown.
+- Enter the complete URL with prefix **'api'** e.g `http://localhost:8000/api/login`.
+- Go to **Body** tab and select **x-www-form-urlencoded** from radio buttons.
+- Now populate the list of values to send to post request with the key value pairs and hit send.
+
+To send request to protected route via **auth:sanctum** middleware.
+
+- To send request to sanctum routes you need to provide `API Token` generated for each user.
+- Copy the **API Token** provided when user in logged in.
+- Go to **Authorization** tab and select **Bearer Token** from dropdown.
+- Now paste the **API Token** in the provided input field.
+
+Hope you enjoy the Job Seeker API. Feel free to contact me for any queries.
+
+- **Email** `ubaidrahim@gmail.com`
+- **Linkedin Profile** `https://www.linkedin.com/in/ubaidrahim/`
